@@ -28,11 +28,11 @@ DB_PATH = "file.db"
 
 SUMMARY_MODEL = os.getenv("SUMMARY_MODEL")
 
-# con = duckdb.connect("file.db")
-# con.sql("CREATE SEQUENCE id_seq START 1")
-# con.sql(
-#     "CREATE TABLE results (id INTEGER PRIMARY KEY DEFAULT nextval('id_seq'), url TEXT, publication TEXT, result JSON, date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
-#     )
+con = duckdb.connect("file.db")
+con.sql("CREATE SEQUENCE id_seq START 1")
+con.sql(
+    "CREATE TABLE results (id INTEGER PRIMARY KEY DEFAULT nextval('id_seq'), url TEXT, publication TEXT, result JSON, date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
+    )
 
 # con.sql("CREATE SEQUENCE articles_id_seq START 1")
 # con.sql(

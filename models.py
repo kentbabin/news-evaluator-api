@@ -1,26 +1,26 @@
-from openai import OpenAI
-from anthropic import Anthropic
-from ollama import Client
+# from openai import OpenAI
+# from anthropic import Anthropic
+# from ollama import Client
 import os, utils, asyncio, json, requests
 from typing import List, Dict, Any
 from dotenv import load_dotenv
 
 load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL")
-ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+# OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY")
+# OPENAI_MODEL = os.getenv("OPENAI_MODEL")
+# ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL")
+# OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-openai_client = OpenAI(api_key=OPENAI_API_KEY)
-anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
-ollama_client = Client(
-    host="https://ollama.com",
-    headers={'Authorization': f'Bearer {OLLAMA_API_KEY}'}
-)
+# openai_client = OpenAI(api_key=OPENAI_API_KEY)
+# anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
+# ollama_client = Client(
+#     host="https://ollama.com",
+#     headers={'Authorization': f'Bearer {OLLAMA_API_KEY}'}
+# )
 
 async def call_openai(prompt: str, text_format: Dict, model: str = OPENAI_MODEL, max_tokens: int = 800) -> Dict[str, Any]:
     def _call():
