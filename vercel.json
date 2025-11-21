@@ -13,22 +13,7 @@
   ],
   "functions": {
     "**": {
-        "excludeFiles": [
-            "**/*.pyc",
-            "**/__pycache__/**",
-            ".env",
-            ".git/**",
-            ".venv/**",
-            "automations/**",
-            "docs/**",
-            "logdir/**",
-            "tests/**",
-            "prisma/migrations/**",
-            "Dockerfile",
-            "README.md",
-            "pytest.ini",
-            "package.json"
-        ]
+        "excludeFiles": "{*.pyc,__pycache__,.env,.git,.venv,README.md,package.json,virtual}/**"
     }
   }
 }
